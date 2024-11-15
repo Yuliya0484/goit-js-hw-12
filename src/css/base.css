@@ -21,12 +21,14 @@
 body {
   margin: 0;
   padding: 20px;
+  box-sizing: border-box;
 }
 form {
   display: flex;
   justify-content: center;
-  margin-bottom: 24px;
+  margin-bottom: 48px;
 }
+
 input[type='text'] {
   padding: 8px 16px;
   font-family: 'Montserrat', sans-serif;
@@ -49,33 +51,27 @@ button {
   background-color: #4e75ff;
   color: #fff;
   border: none;
-  cursor: pointer;
   border-radius: 8px;
 }
 button:hover {
   background-color: #6c8cff;
 }
-.load-btn {
-  margin-left: 45%;
-  margin-top: 40px;
-}
 .gallery {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: space-between;
   gap: 24px;
 }
+.gallery-list {
+  width: 360px;
+  height: 360px;
+}
 .info {
-  bottom: 0;
   background-color: #fff;
   display: flex;
-  border: 1px solid #808080;
+  justify-content: space-evenly;
 }
 p {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  padding: 16px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 12px;
@@ -83,7 +79,24 @@ p {
   letter-spacing: 0.04em;
   color: #2e2f42;
 }
+.load-more-btn {
+  margin-left: 45%;
+  margin-top: 40px;
+}
+
 .loader {
   text-align: center;
   font-size: 18px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.hidden {
+  display: none;
 }

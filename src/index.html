@@ -9,17 +9,16 @@
   </head>
   <body>
     <main>
- <div class="container">
-   <form id="search-form">
-    <input type="text" name="searchQuery" placeholder="Search images..." required/>
-    <button type="submit">Search</button>
+  <div class="container">
+    <form class="search-form">
+    <input class="search-input" type="text" name="searchQuery" placeholder="Search images..." required/>
+    <button class="submit-button" type="submit">Search</button>
   </form>
+<div class="loader hidden" id="loader">Loading...</div>
   <div class="gallery"></div>
-  <button class="load-btn" id="load-more" hidden>Load more</button>
- </div>
+  <button class="load-more-btn hidden">Load more</button>
+  </div>
   <script type="module" src="./main.js"></script>
 </body>
-
-    </main>
-    
+</main> 
 </html>

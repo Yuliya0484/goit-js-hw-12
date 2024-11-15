@@ -1,10 +1,9 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
-
-let lightbox;
+const gallery = document.querySelector('.gallery');
+let lightbox = new SimpleLightbox('.gallery a');
 
 export function renderGallery(images) {
-  const gallery = document.querySelector('.gallery');
   const markup = images
     .map(
       ({
@@ -16,27 +15,25 @@ export function renderGallery(images) {
         comments,
         downloads,
       }) =>
-        `<a class='gallery_item' href="${largeImageURL}">
+        `
+        <div class="gallery-list>
+        <a class="gallery-item" href="${largeImageURL}">
         <img src="${webformatURL}" alt="${tags}" width='360px' height='200px' loading="lazy" />
-        <div class='info'>
-        <p><b>Likes:</b>${likes}</p>
-        <p><b>Views:</b>${views}</p>
-        <p><b>Comments:</b>${comments}</p>
-        <p><b>DownLoads:</b>${downloads}</p>
+        </a>
+        <div class="info">
+          <p>Likes:<br /> ${likes}</p>
+          <p>Views:<br /> ${views}</p>
+          <p>Comments:<br /> ${comments}</p>
+          <p>Downloads:<br /> ${downloads}</p>
+          </div>
         </div>
-      </a>
-      `
+        `
     )
     .join('');
   gallery.insertAdjacentHTML('beforeend', markup);
-
-  if (!lightbox) {
-    lightbox = new SimpleLightbox('.gallery a');
-  } else {
-    lightbox.refresh();
-  }
+  lightbox.refresh();
 }
 
 export function clearGallery() {
-  document.querySelector('.gallery').innerHTML = '';
+  gallery.innerHTML = '';
 }
