@@ -16,7 +16,7 @@ export function renderGallery(images) {
         downloads,
       }) =>
         `
-        <div class="gallery-list>
+        <div class="gallery-list">
         <a class="gallery-item" href="${largeImageURL}">
         <img src="${webformatURL}" alt="${tags}" width='360px' height='200px' loading="lazy" />
         </a>

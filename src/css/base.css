@@ -60,11 +60,12 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 24px;
+  gap: 32px;
 }
 .gallery-list {
-  width: 360px;
-  height: 360px;
+  border: 1px blue;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(7, 6, 6, 0.1);
 }
 .info {
   background-color: #fff;
