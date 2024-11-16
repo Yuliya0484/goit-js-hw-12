@@ -90,3 +90,22 @@ async function fetchAndRenderImages() {
     hideLoader();
   }
 }
+function smoothScroll() {
+  const gallery = document.querySelector('.gallery-list');
+  const { height: cardHeight } =
+    gallery.firstElementChild.getBoundingClientRect();
+
+  window.scrollBy({
+    top: cardHeight * 2,
+    behavior: 'smooth',
+  });
+}
+loadMoreButton.addEventListener('click', async () => {
+  try {
+    await fetchImages();
+    renderGallery(images);
+    smoothScroll();
+  } catch (error) {
+    console.error(error);
+  }
+});
