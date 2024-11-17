@@ -103,9 +103,11 @@ function smoothScroll() {
 loadMoreButton.addEventListener('click', async () => {
   try {
     await fetchImages();
-    renderGallery(images);
+    // renderGallery(images);
     smoothScroll();
   } catch (error) {
     console.error(error);
+  } finally {
+    loadMoreButton.disabled = false;
   }
 });

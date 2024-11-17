@@ -1,5 +1,6 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
+
 const gallery = document.querySelector('.gallery');
 let lightbox = new SimpleLightbox('.gallery a');
 
@@ -18,7 +19,7 @@ export function renderGallery(images) {
         `
         <div class="gallery-list">
         <a class="gallery-item" href="${largeImageURL}">
-        <img src="${webformatURL}" alt="${tags}" width='360px' height='200px' loading="lazy" />
+        <img src="${webformatURL}" alt="${tags}" width="360px" height="200px" loading="lazy"/>
         </a>
         <div class="info">
           <p>Likes:<br /> ${likes}</p>
